@@ -6,7 +6,7 @@
 using namespace std;
 map<string, set<int>> mpID, mpTit, mpAut,  mpKey, mpPub, mpYea; 
 
-void find(map<string, set<int>>& mp, string& str){ //必须引用否则最后一组数据会超时
+void find(map<string, set<int>>& mp, string& str){ //string和map的参数传递较慢，如果作为函数参数及要加上引用。必须引用否则最后一组数据会超时
     if(mp.find(str) == mp.end()) printf("Not Found\n");
     else{
         for(set<int>::iterator it = mp[str].begin(); it != mp[str].end(); it++){
