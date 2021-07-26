@@ -2,44 +2,34 @@
 # include <algorithm>
 using namespace std;
 const int maxn = 1000050;
-const int cmax = 2000100;
-int a[maxn], b[maxn], c[cmax];
-
+int a[maxn], b[maxn];
+int n, m;
 
 int main(){
-    int n, m;
+    scanf("%d", &n);
     for (int  i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
     }
+    scanf("%d", &m);
     for (int i = 0; i < m; i++)
     {
         scanf("%d", &b[i]);
     }
-    int k = 0, l = 0, j = 0;
-    while (k != n - 1 && m != l - 1)
-    {
-        if(a[k] < b[l]){
-            c[j++] = a[k++]; 
-        }
-         else if(a[k] > b[l]){
-            c[j++] = b[l++]; 
-        }
-        else{
-            c[j++] = a[k++];
-            j++;
-        }
-    }
-    if (k = n - 1)
-    {
-        
-    }
-        if (l = n - 1)
-    {
-        
-    }
-    
-    
-    
-    return 0;
+
+int k = (n + m - 1) / 2, count = 0, i = 0, j = 0;
+while (count < k)
+{
+    if (a[i] < b[j])  i++;
+    else j++;
+   count++;
+}
+if (a[i] < b[j]){
+     printf("%d", a[i]);
+}
+else{
+    printf("%d", b[j]);
+}
+
+return 0;
 }
