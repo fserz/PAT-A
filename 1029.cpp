@@ -2,6 +2,7 @@
 # include <algorithm>
 using namespace std;
 const int maxn = 1000050;
+const int INF = 10000000;
 int a[maxn], b[maxn];
 int n, m;
 
@@ -16,6 +17,7 @@ int main(){
     {
         scanf("%d", &b[i]);
     }
+    a[n] = b[m] = INF;
 
 int k = (n + m - 1) / 2, count = 0, i = 0, j = 0;
 while (count < k)
